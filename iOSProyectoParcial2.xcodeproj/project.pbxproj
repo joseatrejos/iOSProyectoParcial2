@@ -97,12 +97,11 @@
 		3D075F26234BE1D900AB4AF6 /* iOSProyectoParcial2 */ = {
 			isa = PBXGroup;
 			children = (
-				3D075F27234BE1D900AB4AF6 /* AppDelegate.swift */,
-				3D075F29234BE1D900AB4AF6 /* ViewController.swift */,
-				3D075F2B234BE1DA00AB4AF6 /* Main.storyboard */,
-				3D075F2E234BE1E300AB4AF6 /* Assets.xcassets */,
-				3D075F30234BE1E300AB4AF6 /* LaunchScreen.storyboard */,
-				3D075F33234BE1E300AB4AF6 /* Info.plist */,
+				3D075F59234BE24200AB4AF6 /* Storyboard */,
+				3D075F58234BE23900AB4AF6 /* ViewControllers */,
+				3D075F57234BE22C00AB4AF6 /* Models */,
+				3D075F56234BE21F00AB4AF6 /* Resources */,
+				3D075F55234BE20B00AB4AF6 /* App */,
 			);
 			path = iOSProyectoParcial2;
 			sourceTree = "<group>";
@@ -123,6 +122,47 @@
 				3D075F49234BE1E300AB4AF6 /* Info.plist */,
 			);
 			path = iOSProyectoParcial2UITests;
+			sourceTree = "<group>";
+		};
+		3D075F55234BE20B00AB4AF6 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				3D075F27234BE1D900AB4AF6 /* AppDelegate.swift */,
+				3D075F33234BE1E300AB4AF6 /* Info.plist */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		3D075F56234BE21F00AB4AF6 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3D075F2E234BE1E300AB4AF6 /* Assets.xcassets */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		3D075F57234BE22C00AB4AF6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		3D075F58234BE23900AB4AF6 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				3D075F29234BE1D900AB4AF6 /* ViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		3D075F59234BE24200AB4AF6 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				3D075F2B234BE1DA00AB4AF6 /* Main.storyboard */,
+				3D075F30234BE1E300AB4AF6 /* LaunchScreen.storyboard */,
+			);
+			name = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
