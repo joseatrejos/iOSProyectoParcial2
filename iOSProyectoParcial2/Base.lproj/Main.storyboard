@@ -224,38 +224,78 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ur0-zu-3fn">
-                                <rect key="frame" x="294" y="550" width="100" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ur0-zu-3fn">
+                                <rect key="frame" x="289" y="550" width="105" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Agregar Carga"/>
+                                <connections>
+                                    <segue destination="utt-8l-uNf" kind="show" id="0FG-fx-oc5"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fij-Ir-bqV">
-                                <rect key="frame" x="294" y="660" width="56" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fij-Ir-bqV">
+                                <rect key="frame" x="197" y="550" width="56" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Guardar"/>
                                 <connections>
                                     <action selector="doTapGuardar:" destination="UGF-9d-e1m" eventType="touchUpInside" id="rTd-Ci-cc2"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Placa de Gasolina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-Jl-rfW">
-                                <rect key="frame" x="62" y="570" width="136" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Carga de Gasolina" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-Jl-rfW">
+                                <rect key="frame" x="20" y="550" width="140" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="OEs-UB-Jyy">
+                                <rect key="frame" x="0.0" y="606" width="414" height="256"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="188-A0-3XC" detailTextLabel="ZPy-3P-pHJ" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="BMD-SM-ELV">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="70"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BMD-SM-ELV" id="xaK-eq-Kjd">
+                                            <rect key="frame" x="0.0" y="0.0" width="376" height="69.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Litros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="188-A0-3XC">
+                                                    <rect key="frame" x="20" y="15" width="43" height="20.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZPy-3P-pHJ">
+                                                    <rect key="frame" x="20" y="38.5" width="33.5" height="14.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="DzM-nt-UL9" firstAttribute="top" secondItem="5ny-lN-CxE" secondAttribute="bottom" constant="12" id="2kb-t4-7mW"/>
+                            <constraint firstItem="OEs-UB-Jyy" firstAttribute="leading" secondItem="QAO-r2-xaY" secondAttribute="leading" id="56K-tm-nXW"/>
                             <constraint firstItem="GVd-ok-Esz" firstAttribute="top" secondItem="AZ7-iM-Snb" secondAttribute="bottom" constant="25" id="86f-zf-doC"/>
+                            <constraint firstItem="QAO-r2-xaY" firstAttribute="bottom" secondItem="OEs-UB-Jyy" secondAttribute="bottom" id="Dxu-qb-f83"/>
                             <constraint firstItem="axR-Kp-lOe" firstAttribute="top" secondItem="BR7-n3-Lkn" secondAttribute="bottom" constant="12" id="Hgh-Mg-AjV"/>
                             <constraint firstItem="sOL-N5-13m" firstAttribute="top" secondItem="hSl-dy-J9v" secondAttribute="bottom" constant="12" id="KGy-3W-Jns"/>
+                            <constraint firstItem="cYc-Jl-rfW" firstAttribute="leading" secondItem="QAO-r2-xaY" secondAttribute="leading" constant="20" id="LHn-kK-R0M"/>
                             <constraint firstItem="Ur0-zu-3fn" firstAttribute="top" secondItem="axR-Kp-lOe" secondAttribute="bottom" constant="20" id="NgV-1c-U5I"/>
                             <constraint firstItem="5ny-lN-CxE" firstAttribute="top" secondItem="hWM-en-vCS" secondAttribute="bottom" constant="25" id="OEa-6L-okf"/>
                             <constraint firstItem="hWM-en-vCS" firstAttribute="top" secondItem="GVd-ok-Esz" secondAttribute="bottom" constant="12" id="QUJ-GL-c1Z"/>
-                            <constraint firstItem="fij-Ir-bqV" firstAttribute="top" secondItem="Ur0-zu-3fn" secondAttribute="bottom" constant="80" id="ZYv-vp-atF"/>
+                            <constraint firstItem="cYc-Jl-rfW" firstAttribute="top" secondItem="axR-Kp-lOe" secondAttribute="bottom" constant="20" id="RSc-fu-Dij"/>
+                            <constraint firstItem="OEs-UB-Jyy" firstAttribute="top" secondItem="cYc-Jl-rfW" secondAttribute="bottom" constant="35" id="Wt6-A7-nYA"/>
                             <constraint firstItem="AZ7-iM-Snb" firstAttribute="top" secondItem="aFE-JW-Ght" secondAttribute="bottom" constant="12" id="Zdi-Dw-bsu"/>
                             <constraint firstItem="hSl-dy-J9v" firstAttribute="top" secondItem="DzM-nt-UL9" secondAttribute="bottom" constant="25" id="bRP-O9-Mef"/>
                             <constraint firstItem="BR7-n3-Lkn" firstAttribute="top" secondItem="sOL-N5-13m" secondAttribute="bottom" constant="25" id="k2f-Gx-iAL"/>
+                            <constraint firstItem="QAO-r2-xaY" firstAttribute="trailing" secondItem="OEs-UB-Jyy" secondAttribute="trailing" id="l0x-lh-9tE"/>
+                            <constraint firstItem="QAO-r2-xaY" firstAttribute="trailing" secondItem="Ur0-zu-3fn" secondAttribute="trailing" constant="20" id="ppD-xn-KiM"/>
                             <constraint firstItem="aFE-JW-Ght" firstAttribute="top" secondItem="FEI-sa-MFB" secondAttribute="top" constant="115" id="uSZ-m6-DIK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QAO-r2-xaY"/>
@@ -270,7 +310,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RPi-Bg-MGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="164" y="463"/>
+            <point key="canvasLocation" x="163.768115942029" y="462.72321428571428"/>
+        </scene>
+        <!--Añadir Carga Gasolina-->
+        <scene sceneID="71V-Gy-zVX">
+            <objects>
+                <viewController id="utt-8l-uNf" customClass="AñadirCargaGasolina" customModule="iOSProyectoParcial2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CFs-rH-W9G">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cantidad de Litros" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hYn-P5-Qso">
+                                <rect key="frame" x="20" y="115" width="141" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Litros de Gasolina" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BnD-yh-dGX">
+                                <rect key="frame" x="20" y="148" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Costo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZf-wT-nC5">
+                                <rect key="frame" x="20" y="203" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="$0.00" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EjT-W6-Kk1">
+                                <rect key="frame" x="20" y="236" width="374" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ld-hD-WaA">
+                                <rect key="frame" x="325" y="286" width="56" height="30"/>
+                                <state key="normal" title="Guardar"/>
+                                <connections>
+                                    <action selector="doTapGuardar:" destination="UGF-9d-e1m" eventType="touchUpInside" id="ih3-f8-CO9"/>
+                                    <action selector="doTapGuardar:" destination="utt-8l-uNf" eventType="touchUpInside" id="pIm-Ld-yQZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hYn-P5-Qso" firstAttribute="top" secondItem="CFs-rH-W9G" secondAttribute="top" constant="115" id="ECa-yN-nGQ"/>
+                            <constraint firstItem="BnD-yh-dGX" firstAttribute="top" secondItem="hYn-P5-Qso" secondAttribute="bottom" constant="12" id="F1r-8N-UeW"/>
+                            <constraint firstItem="EjT-W6-Kk1" firstAttribute="top" secondItem="HZf-wT-nC5" secondAttribute="bottom" constant="12" id="V9g-kU-qnA"/>
+                            <constraint firstItem="3ld-hD-WaA" firstAttribute="top" secondItem="EjT-W6-Kk1" secondAttribute="bottom" constant="20" id="el4-7L-swQ"/>
+                            <constraint firstItem="HZf-wT-nC5" firstAttribute="top" secondItem="BnD-yh-dGX" secondAttribute="bottom" constant="25" id="yK1-zY-TSN"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="JeQ-XU-uak"/>
+                    </view>
+                    <connections>
+                        <outlet property="txtCosto" destination="HZf-wT-nC5" id="gEW-U7-nW4"/>
+                        <outlet property="txtLitros" destination="BnD-yh-dGX" id="ch0-2F-3uF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MeD-Nr-F4e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1013" y="463"/>
         </scene>
         <!--Añadir-->
         <scene sceneID="aDg-HI-Pgc">
