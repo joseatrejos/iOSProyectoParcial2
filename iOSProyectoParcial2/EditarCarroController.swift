@@ -11,35 +11,14 @@ import UIKit
 
 class EditarCarroController : UIViewController {
     
-    var carr : Carro?
+    var carro : Carro?
     var callbackActualizarTabla: (() -> Void)?
     
-   /* @IBOutlet weak var txtNombre: UITextField!
-    @IBOutlet weak var txtTelefono: UITextField!
-    @IBOutlet weak var txtDireccion: UITextField!
-    @IBOutlet weak var txtCorreo: UITextField!*/
     
     override func viewDidLoad() {
         self.title = "Detalles del Carro"
         
-       /* txtNombre.text = contacto!.nombre
-        txtTelefono.text = "\(contacto!.telefono!)"
-        txtDireccion.text = contacto!.direccion
-        txtCorreo.text = contacto!.correo*/
-    }
-    
-    @IBAction func doTapGuardar(_ sender: Any) {/*
-        // Update Info
-        contacto?.nombre = txtNombre.text
-        contacto?.telefono? = (txtTelefono.text! as NSString).integerValue
-        contacto?.direccion = txtDireccion.text
-        contacto?.correo = txtCorreo.text
         
-        // Reload Table
-        callbackActualizarTabla!()
-        
-        // Pop View
-        self.navigationController?.popViewController(animated: true)*/
     }
     
 }

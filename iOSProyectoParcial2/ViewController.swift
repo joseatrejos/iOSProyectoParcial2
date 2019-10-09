@@ -61,13 +61,13 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         }
         else
             if segue.identifier == "goToAgregar" {
-                let destino = segue.destination as? EditarContactoController
+                /*let destino = segue.destination as? EditarContactoController
                 
                 contactos.append(Contacto(nombre: "", telefono: 0, direccion: "", correo: "", foto: "Perfil4"))
                 
                 destino?.contacto = contactos[contactos.count - 1]
                 
-                destino?.callbackActualizarTabla = recargarTabla
+                destino?.callbackActualizarTabla = recargarTabla*/
         }
     }
 }
