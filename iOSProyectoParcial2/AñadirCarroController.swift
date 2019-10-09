@@ -24,21 +24,16 @@ class AñadirCarroController : UIViewController {
         super.viewDidLoad()
         
         self.title = "Agregar Carro"
-        
-        txtPlaca.text = carro!.placa
-        txtModelo.text = carro!.modelo
-        txtMarca.text = carro!.marca
-        txtAño.text = "\(carro!.año!)"
-        txtPropietario.text = carro!.propietario
     }
     
     @IBAction func doTapGuardar(_ sender: Any) {
-        // Update Info
+        // Insert Info
         carro?.placa = txtPlaca.text
         carro?.modelo = txtModelo.text
         carro?.marca = txtMarca.text
-        carro?.año? = (txtAño.text! as NSString).integerValue
+        carro?.año = txtAño.text
         carro?.propietario = txtPropietario.text
+        carro?.foto = "El Camino"
         
         // Reload Table
         callbackActualizarTabla!()

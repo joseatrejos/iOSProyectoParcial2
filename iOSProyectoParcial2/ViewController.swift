@@ -18,9 +18,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         self.title = "Carros"
         
-        carros.append(Carro(modelo: "El Camino", marca: "Ford", año: 1955, propietario: "José Trejo", placa: "ABC-123-V5", foto: "El Camino"))
-        carros.append(Carro(modelo: "Jetta", marca: "Volkswagen", año: 2016, propietario: "Gabriel Pereda", placa: "DEF-456-W6", foto: "Jetta"))
-        carros.append(Carro(modelo: "Accord", marca: "Honda", año: 2005, propietario: "Leticia Serrano Genda", placa: "GHI-789-X7", foto: "Accord"))
+        carros.append(Carro(modelo: "El Camino", marca: "Ford", año: "1955", propietario: "José Trejo", placa: "ABC-123-V5", foto: "El Camino"))
+        carros.append(Carro(modelo: "Jetta", marca: "Volkswagen", año: "2016", propietario: "Gabriel Pereda", placa: "DEF-456-W6", foto: "Jetta"))
+        carros.append(Carro(modelo: "Accord", marca: "Honda", año: "2005", propietario: "Leticia Serrano Genda", placa: "GHI-789-X7", foto: "Accord"))
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -52,7 +52,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "goToEditar" {
+        if segue.identifier == "goToEditarCarro" {
             let destino = segue.destination as? EditarCarroController
             
             destino?.carro = carros[tvCarros.indexPathForSelectedRow!.row]
@@ -60,14 +60,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             destino?.callbackActualizarTabla = recargarTabla
         }
         else
-            if segue.identifier == "goToAgregar" {
-                /*let destino = segue.destination as? EditarContactoController
+            if segue.identifier == "goToAñadirCarro" {
+                let destino = segue.destination as? AñadirCarroController
                 
-                contactos.append(Contacto(nombre: "", telefono: 0, direccion: "", correo: "", foto: "Perfil4"))
+                carros.append(Carro(modelo: "", marca: "", año: "", propietario: "", placa: "", foto: ""))
                 
-                destino?.contacto = contactos[contactos.count - 1]
+                destino?.carro = carros[carros.count - 1]
                 
-                destino?.callbackActualizarTabla = recargarTabla*/
+                destino?.callbackActualizarTabla = recargarTabla
         }
     }
 }
