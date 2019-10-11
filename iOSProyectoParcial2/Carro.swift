@@ -17,6 +17,9 @@ class Carro {
     var placa : String?
     var foto : String?
     
+    var carga : Int?
+    var costo : Int?
+    
     init(modelo : String, marca : String, año : String, propietario : String, placa : String, foto : String){
         self.modelo = modelo
         self.marca = marca

@@ -10,9 +10,13 @@ import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // Table View Outler
     @IBOutlet weak var tvCarros: UITableView!
+    
+    // Cars Array for this Controller's Table View Cell
     var carros : [Carro] = []
     
+    // View Did Load
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,14 +27,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         carros.append(Carro(modelo: "Accord", marca: "Honda", año: "2005", propietario: "Leticia Serrano Genda", placa: "GHI-789-X7", foto: "Accord"))
     }
     
+    // Number of Sections
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     
+    // Number of Rows in Section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return carros.count
     }
     
+    // Table View Cell link to the array carros
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCell(withIdentifier: "celdaCarro") as? CeldaCarroController
         
@@ -43,14 +50,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         return celda!
     }
     
+    // Height for Row
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 165
     }
     
+    // Reload Table
     func recargarTabla() {
         tvCarros.reloadData()
     }
     
+    // Prepare for Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToEditarCarro" {
             let destino = segue.destination as? EditarCarroController

@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		3D04474B234E8FEB00CE7DC1 /* Gasolina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D04474A234E8FEB00CE7DC1 /* Gasolina.swift */; };
-		3D04474D234E905800CE7DC1 /* AñadirCargaGasolina.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D04474C234E905800CE7DC1 /* AñadirCargaGasolina.swift */; };
+		3D04474D234E905800CE7DC1 /* AñadirCargaGasolinaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D04474C234E905800CE7DC1 /* AñadirCargaGasolinaController.swift */; };
+		3D04474F234E957100CE7DC1 /* CeldaGasolinaController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D04474E234E957100CE7DC1 /* CeldaGasolinaController.swift */; };
 		3D075F28234BE1D900AB4AF6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D075F27234BE1D900AB4AF6 /* AppDelegate.swift */; };
 		3D075F2A234BE1D900AB4AF6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D075F29234BE1D900AB4AF6 /* ViewController.swift */; };
 		3D075F2D234BE1DA00AB4AF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3D075F2B234BE1DA00AB4AF6 /* Main.storyboard */; };
@@ -41,7 +42,8 @@
 
 /* Begin PBXFileReference section */
 		3D04474A234E8FEB00CE7DC1 /* Gasolina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gasolina.swift; sourceTree = "<group>"; };
-		3D04474C234E905800CE7DC1 /* AñadirCargaGasolina.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AñadirCargaGasolina.swift"; sourceTree = "<group>"; };
+		3D04474C234E905800CE7DC1 /* AñadirCargaGasolinaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AñadirCargaGasolinaController.swift"; sourceTree = "<group>"; };
+		3D04474E234E957100CE7DC1 /* CeldaGasolinaController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CeldaGasolinaController.swift; sourceTree = "<group>"; };
 		3D075F24234BE1D900AB4AF6 /* iOSProyectoParcial2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProyectoParcial2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D075F27234BE1D900AB4AF6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3D075F29234BE1D900AB4AF6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3D044750234E959B00CE7DC1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				3D7630BC234D2E1E0005460C /* CeldaCarroController.swift */,
+				3D04474E234E957100CE7DC1 /* CeldaGasolinaController.swift */,
+			);
+			name = Cells;
+			sourceTree = "<group>";
+		};
 		3D075F1B234BE1D900AB4AF6 = {
 			isa = PBXGroup;
 			children = (
@@ -166,10 +177,10 @@
 			isa = PBXGroup;
 			children = (
 				3D075F29234BE1D900AB4AF6 /* ViewController.swift */,
-				3D7630BC234D2E1E0005460C /* CeldaCarroController.swift */,
+				3D044750234E959B00CE7DC1 /* Cells */,
 				3D7630BE234D33AC0005460C /* EditarCarroController.swift */,
 				3D7630C0234D34250005460C /* AñadirCarroController.swift */,
-				3D04474C234E905800CE7DC1 /* AñadirCargaGasolina.swift */,
+				3D04474C234E905800CE7DC1 /* AñadirCargaGasolinaController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -317,9 +328,10 @@
 				3D04474B234E8FEB00CE7DC1 /* Gasolina.swift in Sources */,
 				3D075F2A234BE1D900AB4AF6 /* ViewController.swift in Sources */,
 				3D7630BD234D2E1E0005460C /* CeldaCarroController.swift in Sources */,
-				3D04474D234E905800CE7DC1 /* AñadirCargaGasolina.swift in Sources */,
+				3D04474D234E905800CE7DC1 /* AñadirCargaGasolinaController.swift in Sources */,
 				3D7630BF234D33AC0005460C /* EditarCarroController.swift in Sources */,
 				3D7630B9234D26E90005460C /* Carro.swift in Sources */,
+				3D04474F234E957100CE7DC1 /* CeldaGasolinaController.swift in Sources */,
 				3D7630C1234D34250005460C /* AñadirCarroController.swift in Sources */,
 				3D075F28234BE1D900AB4AF6 /* AppDelegate.swift in Sources */,
 			);

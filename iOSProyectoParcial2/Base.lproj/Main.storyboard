@@ -229,7 +229,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <state key="normal" title="Agregar Carga"/>
                                 <connections>
-                                    <segue destination="utt-8l-uNf" kind="show" id="0FG-fx-oc5"/>
+                                    <segue destination="utt-8l-uNf" kind="show" identifier="goToAñadirCargaGasolina" id="0FG-fx-oc5"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fij-Ir-bqV">
@@ -250,7 +250,7 @@
                                 <rect key="frame" x="0.0" y="606" width="414" height="256"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="188-A0-3XC" detailTextLabel="ZPy-3P-pHJ" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="BMD-SM-ELV">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="celdaGasolina" textLabel="188-A0-3XC" detailTextLabel="ZPy-3P-pHJ" rowHeight="70" style="IBUITableViewCellStyleSubtitle" id="BMD-SM-ELV" customClass="CeldaGasolinaController" customModule="iOSProyectoParcial2" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="BMD-SM-ELV" id="xaK-eq-Kjd">
@@ -273,8 +273,16 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="lblCosto" destination="ZPy-3P-pHJ" id="5Tx-aj-xKu"/>
+                                            <outlet property="lblLitros" destination="188-A0-3XC" id="hB8-ZY-YqL"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="UGF-9d-e1m" id="4We-53-2fi"/>
+                                    <outlet property="delegate" destination="UGF-9d-e1m" id="9xw-tv-7BS"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -301,6 +309,7 @@
                         <viewLayoutGuide key="safeArea" id="QAO-r2-xaY"/>
                     </view>
                     <connections>
+                        <outlet property="tvCargasGasolina" destination="OEs-UB-Jyy" id="Puy-Q8-FBD"/>
                         <outlet property="txtAño" destination="sOL-N5-13m" id="X1A-Oc-JJS"/>
                         <outlet property="txtMarca" destination="DzM-nt-UL9" id="Jtc-qX-qO4"/>
                         <outlet property="txtModelo" destination="hWM-en-vCS" id="uhN-oP-eO3"/>
@@ -312,10 +321,10 @@
             </objects>
             <point key="canvasLocation" x="163.768115942029" y="462.72321428571428"/>
         </scene>
-        <!--Añadir Carga Gasolina-->
+        <!--Añadir Carga Gasolina Controller-->
         <scene sceneID="71V-Gy-zVX">
             <objects>
-                <viewController id="utt-8l-uNf" customClass="AñadirCargaGasolina" customModule="iOSProyectoParcial2" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="utt-8l-uNf" customClass="AñadirCargaGasolinaController" customModule="iOSProyectoParcial2" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CFs-rH-W9G">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -364,7 +373,7 @@
                         <viewLayoutGuide key="safeArea" id="JeQ-XU-uak"/>
                     </view>
                     <connections>
-                        <outlet property="txtCosto" destination="HZf-wT-nC5" id="gEW-U7-nW4"/>
+                        <outlet property="txtCosto" destination="EjT-W6-Kk1" id="640-tl-a8Y"/>
                         <outlet property="txtLitros" destination="BnD-yh-dGX" id="ch0-2F-3uF"/>
                     </connections>
                 </viewController>

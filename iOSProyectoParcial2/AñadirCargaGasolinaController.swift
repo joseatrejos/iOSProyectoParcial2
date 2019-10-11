@@ -9,27 +9,33 @@
 import Foundation
 import UIKit
 
-class AñadirCargaGasolina : UIViewController {
+class AñadirCargaGasolinaController : UIViewController {
     
-    //var gasolina = Gasolina?
+    // Variable to store the gas info from the last Table View Cell
+    var gasolina : Gasolina?
     
+    // Update Table
+    var callbackActualizarTabla: (() -> Void)?
+    
+    // Text Field Outlets
     @IBOutlet weak var txtLitros: UITextField!
-    @IBOutlet weak var txtCosto: UILabel!
+    @IBOutlet weak var txtCosto: UITextField!
     
+    // View did Load
     override func viewDidLoad() {
         self.title = "Nueva Carga de Gasolina"
     }
     
+    // Save Button Action
     @IBAction func doTapGuardar(_ sender: Any) {
         // Insert Info
-        gasolina?.litros = txtLitros.text
-        gaolina?.costos = txtCosto.text
+        gasolina?.Litros = (txtLitros.text! as NSString).integerValue
+        gasolina?.Costo = (txtCosto.text! as NSString).integerValue
         
         // Reload Table
-        //callbackActualizarTabla!()
+        callbackActualizarTabla!()
         
         // Pop View
         self.navigationController?.popViewController(animated: true)
     }
-    
 }
