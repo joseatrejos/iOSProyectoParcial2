@@ -11,6 +11,10 @@ import UIKit
 
 class EditarCarroController : UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    // Edit Button
+    @IBOutlet weak var btnEditar: UIBarButtonItem!
+    var editState = 0
+    
     // Table View
     @IBOutlet weak var tvCargasGasolina: UITableView!
     
@@ -34,6 +38,20 @@ class EditarCarroController : UIViewController, UITableViewDelegate, UITableView
     override func viewDidLoad() {
         self.title = "Detalles del Carro"
         
+        // Disabling of the TextFields
+        txtPlaca.isUserInteractionEnabled = false
+        txtAño.isUserInteractionEnabled = false
+        txtMarca.isUserInteractionEnabled = false
+        txtModelo.isUserInteractionEnabled = false
+        txtPropietario.isUserInteractionEnabled = false
+        
+        // Gray Color for the Text Field's Info
+        txtPlaca.textColor = UIColor.gray
+        txtAño.textColor = UIColor.gray
+        txtMarca.textColor = UIColor.gray
+        txtModelo.textColor = UIColor.gray
+        txtPropietario.textColor = UIColor.gray
+        
         // Filling of the Outlets
         txtPlaca.text = carro!.placa
         txtModelo.text = carro!.modelo
@@ -56,8 +74,8 @@ class EditarCarroController : UIViewController, UITableViewDelegate, UITableView
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let celda = tableView.dequeueReusableCell(withIdentifier: "celdaGasolina") as? CeldaGasolinaController
         
-        celda?.lblLitros.text = "\(gasolinas[indexPath.row].Litros!)"
-        celda?.lblCosto.text = "\(gasolinas[indexPath.row].Costo!)"
+        celda?.lblLitros.text = "\(gasolinas[indexPath.row].Litros!)" + " L"
+        celda?.lblCosto.text = "$" + "\(gasolinas[indexPath.row].Costo!)" + ".00"
         
         return celda!
     }
@@ -89,20 +107,76 @@ class EditarCarroController : UIViewController, UITableViewDelegate, UITableView
         }
     }
     
-    // Save Button Action
-    @IBAction func doTapGuardar(_ sender: Any) {
-        // Update Info
-        carro?.placa = txtPlaca.text
-        carro?.modelo = txtModelo.text
-        carro?.marca = txtMarca.text
-        carro?.año = txtAño.text
-        carro?.propietario = txtPropietario.text
-        
-        // Reload Table
-        callbackActualizarTabla!()
-        
-        // Pop View
-        self.navigationController?.popViewController(animated: true)
+    // Edit Button Action
+    @IBAction func doTapEdit(_ sender: Any) {
+        if(editState == 0){
+            btnEditar.title = "Save"
+            
+            // Enabling the Text Fields
+            txtPlaca.isUserInteractionEnabled = true
+            txtAño.isUserInteractionEnabled = true
+            txtMarca.isUserInteractionEnabled = true
+            txtModelo.isUserInteractionEnabled = true
+            txtPropietario.isUserInteractionEnabled = true
+            
+            // Darkening the Text Fields' Information Color
+            txtPlaca.textColor = UIColor.black
+            txtAño.textColor = UIColor.black
+            txtMarca.textColor = UIColor.black
+            txtModelo.textColor = UIColor.black
+            txtPropietario.textColor = UIColor.black
+            
+            editState += 1
+        }
+        else{
+            // Update Info
+            carro?.placa = txtPlaca.text
+            carro?.modelo = txtModelo.text
+            carro?.marca = txtMarca.text
+            carro?.año = txtAño.text
+            carro?.propietario = txtPropietario.text
+            
+            // Reload Table
+            callbackActualizarTabla!()
+            
+            // Change the Button's title
+            btnEditar.title = "Edit"
+            
+            // Disable the Text Fields
+            txtPlaca.isUserInteractionEnabled = true
+            txtAño.isUserInteractionEnabled = true
+            txtMarca.isUserInteractionEnabled = true
+            txtModelo.isUserInteractionEnabled = true
+            txtPropietario.isUserInteractionEnabled = true
+            
+            // Gray Color for the Text Field's Info
+            txtPlaca.textColor = UIColor.gray
+            txtAño.textColor = UIColor.gray
+            txtMarca.textColor = UIColor.gray
+            txtModelo.textColor = UIColor.gray
+            txtPropietario.textColor = UIColor.gray
+            
+            editState -= 1
+            
+            // Pop View
+            // self.navigationController?.popViewController(animated: true)
+        }
     }
     
+    // Enable Deletion of Rows
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    // Delete Row when user slides
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete{
+            gasolinas.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
+    }
 }

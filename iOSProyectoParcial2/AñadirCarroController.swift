@@ -39,7 +39,7 @@ class AñadirCarroController : UIViewController {
         carro?.marca = txtMarca.text
         carro?.año = txtAño.text
         carro?.propietario = txtPropietario.text
-        carro?.foto = "El Camino"
+        carro?.foto = "Accord"
         
         // Reload Table
         callbackActualizarTabla!()
